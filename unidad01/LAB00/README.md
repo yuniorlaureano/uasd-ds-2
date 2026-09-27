@@ -1,5 +1,7 @@
-# uasd-ds-2
-## Unit 01
+# INF-8239-C2
+> Manual laboratorios guiados.
+> Preparación y validación del entorno profesional
+## Unidad 01 - LAB00
 
 ### Equipo utilizado
 
