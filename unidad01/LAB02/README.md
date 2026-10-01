@@ -11,3 +11,6 @@
 - ***Physical Memory (RAM):***	32.0 GB
 - ***GPU:*** NVIDIA GeForce RTX 3080
 
+En este proyecto guiado, se estuvo utilizando un conjunto de datos descrito en [ficha del dataset](docs/ficha_dataset.md)
+
+Todo el proceso está descrito paso a paso en el notebook: [main.ipynb](notebooks/main.ipynb)
