@@ -1,0 +1,23 @@
+[project]
+name = "demo02"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Yunior Laureano", email = "yuniorlaureano@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=7.4.0",
+    "opencv-python-headless>=5.0.0.93",
+    "pandas>=3.0.6",
+    "pillow>=12.3.0",
+    "pytesseract>=0.3.13",
+]
+
+[project.scripts]
+demo02 = "demo02:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
