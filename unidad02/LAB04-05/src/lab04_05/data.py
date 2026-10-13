@@ -1,8 +1,24 @@
 from pathlib import Path
 import os
+import pandas as pd
 
 class Data:
 
+    def validate_dataframe(self, df: pd.DataFrame, text_column: str, target_column: str) -> None:
+        missing = {text_column, target_column} - set(df.columns)
+        
+        if missing:
+            raise ValueError(f"Faltan columnas requeridas: {sorted(missing)}")
+       
+        if df.empty:
+            raise ValueError("El dataset estÃ¡ vacÃ­o")
+       
+        if df[text_column].fillna("").astype(str).str.strip().eq("").any():
+            raise ValueError("Existen textos vacios")
+       
+        if df[target_column].nunique(dropna=True) < 2:
+            raise ValueError("Se requieren al menos dos clases")
+        
     def get_data_folder(self):
         current_file_path = Path(__file__)
         project_directory_path = current_file_path.resolve().parent.parent.parent
