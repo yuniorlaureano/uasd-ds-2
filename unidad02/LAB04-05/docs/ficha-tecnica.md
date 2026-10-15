@@ -41,4 +41,4 @@ La etiqueta puede ser 1 (para positivo), o 0 (para negativo).
 **Hipótesis:**
 La preguna a responder es si el texto tiene connotación negativa o positiva.
 
-**Dimitrios Kotzias:** Dimitrios Kotzias
+**Autor:** Dimitrios Kotzias
