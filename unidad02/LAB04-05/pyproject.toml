@@ -8,8 +8,13 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "gensim>=4.4.0",
     "ipykernel>=7.4.0",
+    "matplotlib>=3.11.2",
+    "networkx>=3.7",
     "pandas>=3.0.6",
+    "pytest>=9.1.1",
+    "scikit-learn>=1.9.1",
 ]
 
 [project.scripts]

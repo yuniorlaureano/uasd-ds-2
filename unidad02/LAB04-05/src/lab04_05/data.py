@@ -1,8 +1,12 @@
 from pathlib import Path
 import os
 import pandas as pd
+import re
 
 class Data:
+
+    def tokenize(self, value: str) -> list[str]:
+        return re.findall(r"(?u)\b\w\w+\b", str(value).lower())
 
     def validate_dataframe(self, df: pd.DataFrame, text_column: str, target_column: str) -> None:
         missing = {text_column, target_column} - set(df.columns)
@@ -27,6 +31,15 @@ class Data:
             "data"
         )
         return data_directory_path
+
+    def get_root_directory(self):
+        current_file_path = Path(__file__)
+        project_directory_path = current_file_path.resolve().parent.parent.parent
+        return project_directory_path
+
+    def create_directory(self, dir_name):
+        root_dir = self.get_root_directory()
+        (root_dir / dir_name).mkdir(parents=True, exist_ok=True)
 
     def get_file_path(self, file_path):
         data_folder = self.get_data_folder()
