@@ -1,0 +1,14 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\oamro\AppData\Local\Temp\l45v\Scripts\python.exe
+rootdir: D:\Documents\Ciencias de datos\Ciencia de datos 2\PRACTICAS\uasd-ds-2\unidad02\LAB04-05
+configfile: pyproject.toml
+plugins: anyio-4.15.1, platformdirs-4.13.0
+collecting ... collected 5 items
+
+tests/test_data_contract.py::test_accepts_valid_dataframe PASSED         [ 20%]
+tests/test_data_contract.py::test_rejects_missing_target PASSED          [ 40%]
+tests/test_data_contract.py::test_rejects_empty_text PASSED              [ 60%]
+tests/test_embeddings_network.py::test_demo_network_has_valid_pagerank PASSED [ 80%]
+tests/test_text_model.py::test_each_pipeline_predicts_one_label PASSED   [100%]
+
+============================== 5 passed in 1.90s ==============================

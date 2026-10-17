@@ -8,12 +8,13 @@ data = Data()
 
 ROOT = data.get_root_directory()
 MODEL_PATH = ROOT / "models/text_model.joblib"
+LABELS = {0: "Negativo (0)", 1: "Positivo (1)"}
 
 st.title("INF-8239 · Clasificador de texto")
 st.caption("Demostración académica. La predicción no constituye una decisión automática.")
 
 if not MODEL_PATH.exists():
-    st.error("No existe el modelo. Ejecute: uv run python scripts/train_text.py")
+    st.error("No existe el modelo. Ejecute el notebook notebooks/LAB05.ipynb para entrenarlo y guardarlo en models/.")
     st.stop()
 
 model = joblib.load(MODEL_PATH)
@@ -23,5 +24,5 @@ if st.button("Clasificar"):
         st.warning("Ingrese un texto.")
     else:
         prediction = model.predict([text])[0]
-        st.metric("Clase predicha", str(prediction))
+        st.metric("Clase predicha", LABELS.get(int(prediction), str(prediction)))
         st.info("Interprete la salida dentro del dominio y las limitaciones del dataset documentado.")
