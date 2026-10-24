@@ -23,9 +23,9 @@ Los usuarios son estudiantes y docentes que exploran MovieLens desde la app loca
 | Popularidad ponderada | `weighted_popularity` | Media bayesiana: `v/(v+m)·R + m/(v+m)·C`, donde `v` son los votos de la película, `R` su media, `m` = 12 (percentil 80) y `C` = 3.50 (media global) |
 | Contenido | `ContentRecommender` | TF-IDF de géneros y similitud coseno con la película consultada |
 | Factorización matricial | `MatrixFactorization` | SGD con 20 factores, 12 épocas, tasa de aprendizaje 0.01, regularización 0.05 y semilla 42 |
-| Híbrido | `scripts/lab09_hybrid.py` | `α·colaborativo + (1−α)·contenido`, ambos normalizados entre 0 y 1, con α = 0.75 |
+| Híbrido | `hybrid_top_n` | `α·colaborativo + (1−α)·contenido`, ambos normalizados entre 0 y 1. El experimento base usa α = 0.75; la configuración seleccionada en LAB09 es α = 0.5 con 20 factores |
 
-- **Fallback:** si el usuario no está en el modelo colaborativo (`top_n` devuelve una tabla vacía), se usa la popularidad, que no es personalizada.
+- **Fallback:** si el usuario no está en el modelo colaborativo, `hybrid_top_n` devuelve `popularity_fallback`: las 10 películas con más votos en entrenamiento (desempate por media), marcadas con `source = "popularidad (no personalizada)"`. No coincide con el Top-10 ponderado de LAB08.
 - **Top-10 de popularidad (LAB08):**
 
   | # | Película | Votos | Media | Score |
@@ -44,20 +44,31 @@ Los usuarios son estudiantes y docentes que exploran MovieLens desde la app loca
 ## Métricas offline
 - **Partición (LAB09):** *temporal leave-one-out*. El último rating de cada usuario va a prueba y el resto a entrenamiento (`temporal_leave_one_out`).
 - **Métricas:** RMSE de la predicción del rating, HitRate@10 (proporción de usuarios cuya película de prueba aparece en su Top-10) y cobertura del catálogo. Se guardan en `reports/hybrid_metrics.json`.
-- **Estado:** LAB09 todavía no se ha ejecutado, así que no hay métricas del modelo híbrido.
-- **LAB08 no tiene métricas offline:** la popularidad y el contenido se evaluaron cualitativamente, revisando el Top-10 y tres consultas por contenido (ver el README).
+- **Resultados (LAB09, 3 semillas, 587 usuarios evaluables):**
+
+  | Modelo | RMSE | HitRate@10 | Cobertura |
+  |---|---|---|---|
+  | Media del usuario | 1.0231 | — | — |
+  | Popularidad (fallback) | — | 0.0204 | 0.1 % |
+  | MF 20 factores + híbrido α = 0.75 (base) | 1.0255 ± 0.0010 | 0.0352 | 7.4 % |
+  | **MF 20 factores + híbrido α = 0.5 (seleccionado)** | 1.0255 ± 0.0010 | **0.0380** | 8.5 % |
+
+  La MF no supera a la media del usuario en RMSE. La ventaja de α = 0.5 sobre 0.75 está dentro de la variación entre semillas. Detalle, Pareto y perfiles en [LAB09.md](../LAB09.md); corridas en `reports/lab09_runs.csv`.
+- **LAB08 no tiene métricas offline:** la popularidad y el contenido se evaluaron cualitativamente, revisando el Top-10 y tres consultas por contenido (ver [LAB08.md](../LAB08.md)).
 
 ## Cold start, cobertura y diversidad
 - **Usuario nuevo:** recibe el Top-10 de popularidad, que es el mismo para todos.
+- **Usuario con poco historial:** con 19 ratings (usuario 53) la lista cambia casi por completo entre semillas (Jaccard 0.02), frente a 0.62 del usuario con 2,697 ratings. El contenido solo reordena candidatas de la MF y no lo estabiliza.
+- **Película nueva en la evaluación:** 23 de las 610 películas de prueba no existían en entrenamiento y no se pueden evaluar con la MF.
 - **Película nueva:** el recomendador por contenido la cubre si tiene géneros. No la cubren la popularidad (necesita al menos 12 ratings) ni el colaborativo (necesita ratings de entrenamiento). Las 34 películas sin géneros no tienen ninguna señal.
-- **Cobertura:** el Top-10 de popularidad cubre 10 de 9,742 películas (0.1 %), siempre las mismas.
+- **Cobertura:** el Top-10 de popularidad cubre 10 de 9,742 películas (0.1 %), siempre las mismas. El híbrido cubre entre 7.1 % (α = 1) y 11.1 % (α = 0) del catálogo entrenado.
 - **Diversidad:** es baja en el contenido. En las tres consultas, 9 o 10 de las 10 recomendaciones tienen exactamente los mismos géneros que la consulta (puntuación 1.0). Es sobre-especialización: el sistema no propone nada fuera de esa combinación.
 - **Empates:** con solo géneros hay muchos empates en 1.0 (13 películas para *Toy Story*), y el orden entre ellas lo decide el algoritmo de ordenamiento, no ningún criterio de calidad.
 
 ## Riesgos y monitoreo
-- **Sesgo de popularidad:** la línea base refuerza lo que ya es popular (clásicos de Hollywood muy votados) y no da exposición al catálogo poco visto.
+- **Sesgo de popularidad:** la línea base refuerza lo que ya es popular (clásicos de Hollywood muy votados) y no da exposición al catálogo poco visto. En el híbrido con α = 0.5, *Fight Club* aparece en el Top-10 del 35 % de los usuarios, y la mediana de votos de lo recomendado es 119 frente a 3 en el catálogo.
+- **Retroalimentación:** si las listas se mostraran, las películas recomendadas recibirían más ratings y el siguiente entrenamiento las reforzaría.
 - **Similitud mal interpretada:** un 1.0 significa la misma combinación de géneros, no la misma calidad ni que al usuario le vaya a gustar. La app lo aclara en su texto.
-- **Defecto conocido:** en `ContentRecommender.recommend`, el filtro `value != index` compara la puntuación con el índice, así que no excluye de verdad la película consultada. Hoy no aparece en las listas solo por el orden de los empates. Hay que corregirlo antes de LAB09.
 - **Datos:** la versión de `ml-latest-small` puede cambiar. Hay que comparar el SHA-256 antes de comparar resultados.
 - **Monitoreo propuesto:** cobertura del catálogo, diversidad de géneros dentro de cada lista, proporción de usuarios que caen en el fallback, HitRate@10 por segmento de actividad del usuario, y repetir `uv run pytest -q` ante cualquier cambio de datos o de código.
 - **Uso:** no usar en producción ni para decisiones sobre personas. Es un ejercicio académico.

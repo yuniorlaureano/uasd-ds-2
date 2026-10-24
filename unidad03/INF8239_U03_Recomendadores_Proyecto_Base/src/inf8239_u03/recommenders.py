@@ -73,9 +73,50 @@ class MatrixFactorization:
         if user_id not in self.user_index:
             return pd.DataFrame(columns=["movieId", "collaborative_score"])
         candidates = [item for item in self.items if item not in seen]
-        scores = np.array([self.predict(user_id, item) for item in candidates])
+        rows = [self.item_index[item] for item in candidates]
+        scores = self.global_mean + self.item_factors[rows] @ self.user_factors[self.user_index[user_id]]
         order = scores.argsort()[::-1][:k]
         return pd.DataFrame({"movieId": np.asarray(candidates)[order], "collaborative_score": scores[order]})
+
+    def size_bytes(self) -> int:
+        return int(self.user_factors.nbytes + self.item_factors.nbytes)
+
+
+def popularity_fallback(train: pd.DataFrame, k: int = 10) -> pd.DataFrame:
+    popular = train.groupby("movieId")["rating"].agg(["mean", "count"]).sort_values(["count", "mean"], ascending=False)
+    result = popular.head(k).reset_index()[["movieId"]]
+    result["source"] = "popularidad (no personalizada)"
+    return result
+
+
+def _min_max(values: np.ndarray) -> np.ndarray:
+    return (values - values.min()) / max(values.max() - values.min(), 1e-9)
+
+
+def hybrid_top_n(
+    model: MatrixFactorization,
+    train: pd.DataFrame,
+    genre_matrix,
+    movie_row: dict[int, int],
+    user_id: int,
+    alpha: float = 0.75,
+    k: int = 10,
+    pool: int = 100,
+) -> pd.DataFrame:
+    if user_id not in model.user_index:
+        return popularity_fallback(train, k)
+    history = train.loc[train["userId"].eq(user_id) & train["movieId"].isin(movie_row), ["movieId", "rating"]]
+    collaborative = model.top_n(user_id, set(history["movieId"]), pool)
+    collaborative["normalized"] = _min_max(collaborative["collaborative_score"].to_numpy())
+    history_rows = [movie_row[int(item)] for item in history["movieId"]]
+    weights = np.clip(history["rating"].to_numpy() - 2.5, 0.1, None)
+    profile = np.asarray(genre_matrix[history_rows].multiply(weights[:, None]).sum(axis=0) / weights.sum())
+    candidate_rows = [movie_row[int(item)] for item in collaborative["movieId"]]
+    collaborative["content_score"] = _min_max(cosine_similarity(profile, genre_matrix[candidate_rows]).ravel())
+    collaborative["hybrid_score"] = alpha * collaborative["normalized"] + (1 - alpha) * collaborative["content_score"]
+    result = collaborative.nlargest(k, "hybrid_score").reset_index(drop=True)
+    result["source"] = "híbrido"
+    return result
 
 
 def temporal_leave_one_out(ratings: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
