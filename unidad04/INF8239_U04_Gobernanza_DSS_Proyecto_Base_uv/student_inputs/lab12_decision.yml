@@ -1,6 +1,35 @@
-priority_harm: REPLACE
-primary_metric: REPLACE
-tolerance: REPLACE
-evidence: REPLACE
-limitation: REPLACE
-recommendation: REPLACE
+priority_harm: >-
+  Falso negativo: un caso con riesgo real queda al final de la cola y su revisión se
+  retrasa (riesgos R01 y R07 de LAB11). Es peor que un falso positivo, que solo cuesta
+  una revisión innecesaria.
+primary_metric: >-
+  Recall por grupo protegido y brecha de recall entre G1 y G2. Como métrica secundaria,
+  la brecha de FPR (carga de revisiones innecesarias). No se usa accuracy como métrica
+  principal: con 55% de positivos, un modelo que marque todo como positivo tendría recall
+  1.0 y accuracy 0.55 sin servir para priorizar.
+tolerance: >-
+  Recall global >= 0.68 y recall de cada grupo >= 0.68. Brecha de recall <= 0.16 y brecha
+  de FPR <= 0.16 (configs/governance.yml). Solo se interpretan subgrupos con n >= 20 y al
+  menos 10 positivos (para recall) o 10 negativos (para FPR).
+evidence: >-
+  Test temporal: 160 casos desde 2026-09-25; G1 n=101 con 49 positivos, G2 n=59 con 43.
+  Logística: recall 0.717, FPR 0.279, recall G1 0.653 y G2 0.791 (brecha 0.138), brecha de
+  FPR 0.125 (G2 0.375), 3.6 KB, 0.04 s. Árbol: recall 0.717, FPR 0.309, brecha de recall
+  0.181 y de FPR 0.168 (supera los dos umbrales), 7.9 KB. Regla no predictiva: recall
+  0.359, FPR 0.103. Intervalo bootstrap 95% de la brecha de recall de la logística:
+  [0.01, 0.31].
+limitation: >-
+  Muestra pequeña: el FPR de G2 se calcula con solo 16 negativos y el intervalo de la
+  brecha de recall incluye valores mayores que 0.16. Cuatro subgrupos interseccionales
+  tienen menos de 20 casos o de 10 positivos. Los datos son sintéticos y hay un solo corte
+  temporal. Excluir protected_group no elimina los proxies: G2 tiene menor
+  infrastructure_score (0.44 vs 0.57) y mayor exposure (0.56 vs 0.47). Una brecha
+  observada es una señal para investigar, no una prueba de discriminación causal.
+recommendation: >-
+  REVISAR. Se prefiere la logística: cumple los umbrales globales y de brecha, iguala el
+  recall del árbol con menos FPR y menos de la mitad del tamaño, y duplica el recall de la
+  regla no predictiva. No se despliega todavía porque el recall de G1 (0.653) está bajo
+  0.68. Antes de desplegar: revisar el umbral de decisión para G1 y los casos de G1 que
+  el modelo no detectó, mantener activa la regla de seguridad de exposición e
+  infraestructura y obtener otro corte temporal. El analista humano decide cada caso y
+  puede ignorar el orden del modelo. Responsable: Data Scientist; aprueba: Product Owner.
