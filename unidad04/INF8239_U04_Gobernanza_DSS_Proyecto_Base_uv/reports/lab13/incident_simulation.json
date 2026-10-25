@@ -1,0 +1,30 @@
+{
+  "detected_at": "2026-10-25T17:14:10.857558+00:00",
+  "signal": "recall gap exceeded",
+  "observed_gaps": {
+    "recall_gap": 0.13763644992880875,
+    "fpr_gap": 0.125
+  },
+  "injected_gaps": {
+    "recall_gap": 0.26,
+    "fpr_gap": 0.125
+  },
+  "decision": {
+    "status": "REVIEW",
+    "checks": {
+      "recall": true,
+      "group_recall": false,
+      "recall_gap": false,
+      "fpr_gap": true,
+      "latency": true,
+      "model_size": true,
+      "privacy": true
+    },
+    "failed": [
+      "group_recall",
+      "recall_gap"
+    ],
+    "human_action": "Do not deploy: operate with the non-predictive baseline, investigate failed gates and document the owner's decision"
+  },
+  "model_version": "logistic-v0.1.0-74db9fc35677"
+}

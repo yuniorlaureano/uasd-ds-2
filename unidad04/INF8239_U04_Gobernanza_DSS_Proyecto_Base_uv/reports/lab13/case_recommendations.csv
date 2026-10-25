@@ -1,0 +1,161 @@
+priority,case_id,received_date,zone,exposure,infrastructure_score,probability,safety_rule,recommended_action
+1,CASE-0538,2026-10-25,Sur,0.8316,0.4168,0.998,True,Revisar esta semana (regla de seguridad)
+2,CASE-0544,2026-11-04,Este,0.9254,0.2826,0.996,True,Revisar esta semana (regla de seguridad)
+3,CASE-0571,2026-11-04,Sur,0.7164,0.1871,0.993,True,Revisar esta semana (regla de seguridad)
+4,CASE-0541,2026-11-01,Sur,0.7723,0.361,0.99,True,Revisar esta semana (regla de seguridad)
+5,CASE-0568,2026-11-01,Norte,0.8429,0.288,0.99,True,Revisar esta semana (regla de seguridad)
+6,CASE-0611,2026-12-17,Norte,0.9049,0.5959,0.99,True,Revisar esta semana (regla de seguridad)
+7,CASE-0539,2026-10-26,Norte,0.7786,0.6175,0.986,True,Revisar esta semana (regla de seguridad)
+8,CASE-0582,2026-11-15,Norte,0.7605,0.4453,0.986,True,Revisar esta semana (regla de seguridad)
+9,CASE-0615,2026-12-21,Oeste,0.8518,0.192,0.983,True,Revisar esta semana (regla de seguridad)
+10,CASE-0531,2026-10-18,Oeste,0.911,0.4081,0.98,True,Revisar esta semana (regla de seguridad)
+11,CASE-0623,2026-12-02,Oeste,0.8232,0.4688,0.975,True,Revisar esta semana (regla de seguridad)
+12,CASE-0573,2026-11-06,Norte,0.4791,0.1462,0.97,True,Revisar esta semana (regla de seguridad)
+13,CASE-0553,2026-11-13,Sur,0.6205,0.2025,0.967,True,Revisar esta semana (regla de seguridad)
+14,CASE-0457,2026-09-25,Este,0.5572,0.0791,0.966,True,Revisar esta semana (regla de seguridad)
+15,CASE-0547,2026-11-07,Sur,1.0,0.5036,0.961,True,Revisar esta semana (regla de seguridad)
+16,CASE-0617,2026-12-23,Oeste,0.7703,0.374,0.961,True,Revisar esta semana (regla de seguridad)
+17,CASE-0583,2026-11-16,Sur,0.6928,0.2847,0.959,True,Revisar esta semana (regla de seguridad)
+18,CASE-0581,2026-11-14,Sur,0.5302,0.19,0.948,True,Revisar esta semana (regla de seguridad)
+19,CASE-0562,2026-11-22,Norte,0.7362,0.1412,0.935,True,Revisar esta semana (regla de seguridad)
+20,CASE-0497,2026-10-11,Este,0.7242,0.5073,0.934,True,Revisar esta semana (regla de seguridad)
+21,CASE-0598,2026-12-04,Oeste,0.6848,0.2995,0.93,True,Revisar esta semana (regla de seguridad)
+22,CASE-0616,2026-12-22,Norte,0.7135,0.6364,0.914,True,Revisar esta semana (regla de seguridad)
+23,CASE-0496,2026-10-10,Este,0.7025,0.4277,0.908,True,Revisar esta semana (regla de seguridad)
+24,CASE-0505,2026-10-19,Sur,0.7078,0.6387,0.906,True,Revisar esta semana (regla de seguridad)
+25,CASE-0636,2026-12-15,Oeste,0.7348,0.7889,0.905,True,Revisar esta semana (regla de seguridad)
+26,CASE-0603,2026-12-09,Norte,0.7024,0.5135,0.869,True,Revisar esta semana (regla de seguridad)
+27,CASE-0589,2026-11-22,Norte,0.7042,0.4486,0.863,True,Revisar esta semana (regla de seguridad)
+28,CASE-0574,2026-11-07,Sur,0.6721,0.0316,0.807,True,Revisar esta semana (regla de seguridad)
+29,CASE-0537,2026-10-24,Norte,0.2751,0.2401,0.794,True,Revisar esta semana (regla de seguridad)
+30,CASE-0532,2026-10-19,Oeste,0.7111,0.4617,0.782,True,Revisar esta semana (regla de seguridad)
+31,CASE-0625,2026-12-04,Sur,0.2907,0.2525,0.777,True,Revisar esta semana (regla de seguridad)
+32,CASE-0604,2026-12-10,Este,0.5853,0.1907,0.776,True,Revisar esta semana (regla de seguridad)
+33,CASE-0602,2026-12-08,Norte,0.5953,0.0956,0.772,True,Revisar esta semana (regla de seguridad)
+34,CASE-0575,2026-11-08,Oeste,0.4628,0.0933,0.77,True,Revisar esta semana (regla de seguridad)
+35,CASE-0591,2026-11-24,Este,0.7355,0.5914,0.704,True,Revisar esta semana (regla de seguridad)
+36,CASE-0484,2026-09-25,Norte,0.7988,0.7238,0.697,True,Revisar esta semana (regla de seguridad)
+37,CASE-0630,2026-12-09,Este,0.7137,0.6582,0.617,True,Revisar esta semana (regla de seguridad)
+38,CASE-0566,2026-11-26,Oeste,0.8025,0.9217,0.587,True,Revisar esta semana (regla de seguridad)
+39,CASE-0559,2026-11-19,Norte,0.7241,0.9027,0.402,True,Revisar esta semana (regla de seguridad)
+40,CASE-0563,2026-11-23,Oeste,0.3613,0.2508,0.203,True,Revisar esta semana (regla de seguridad)
+41,CASE-0631,2026-12-10,Sur,0.4868,0.494,0.985,False,Revisar primero
+42,CASE-0619,2026-12-25,Oeste,0.4891,0.4265,0.981,False,Revisar primero
+43,CASE-0523,2026-10-10,Oeste,0.6597,0.709,0.97,False,Revisar primero
+44,CASE-0596,2026-12-02,Norte,0.655,0.4017,0.95,False,Revisar primero
+45,CASE-0533,2026-10-20,Oeste,0.5367,0.3169,0.945,False,Revisar primero
+46,CASE-0609,2026-12-15,Oeste,0.5305,0.3701,0.937,False,Revisar primero
+47,CASE-0486,2026-09-27,Este,0.6052,0.5766,0.925,False,Revisar primero
+48,CASE-0501,2026-10-15,Norte,0.6899,0.7259,0.92,False,Revisar primero
+49,CASE-0502,2026-10-16,Norte,0.5486,0.4015,0.918,False,Revisar primero
+50,CASE-0551,2026-11-11,Norte,0.6409,0.5819,0.904,False,Revisar primero
+51,CASE-0548,2026-11-08,Norte,0.5118,0.4186,0.894,False,Revisar primero
+52,CASE-0597,2026-12-03,Oeste,0.6255,0.3479,0.892,False,Revisar primero
+53,CASE-0564,2026-11-24,Norte,0.5653,0.7408,0.887,False,Revisar primero
+54,CASE-0635,2026-12-14,Este,0.4625,0.5925,0.883,False,Revisar primero
+55,CASE-0513,2026-10-27,Sur,0.6296,0.6292,0.852,False,Revisar primero
+56,CASE-0500,2026-10-14,Sur,0.5945,0.4544,0.808,False,Revisar primero
+57,CASE-0587,2026-11-20,Oeste,0.531,0.7053,0.8,False,Revisar primero
+58,CASE-0637,2026-12-16,Oeste,0.6792,0.4741,0.8,False,Revisar primero
+59,CASE-0534,2026-10-21,Sur,0.5389,0.3705,0.794,False,Revisar primero
+60,CASE-0626,2026-12-05,Sur,0.5094,0.5913,0.785,False,Revisar primero
+61,CASE-0594,2026-11-27,Norte,0.6253,0.9257,0.783,False,Revisar primero
+62,CASE-0599,2026-12-05,Este,0.6651,0.3037,0.78,False,Revisar primero
+63,CASE-0546,2026-11-06,Oeste,0.2221,0.4239,0.774,False,Revisar primero
+64,CASE-0507,2026-10-21,Oeste,0.4408,0.3943,0.767,False,Revisar primero
+65,CASE-0639,2026-12-18,Sur,0.4357,0.489,0.763,False,Revisar primero
+66,CASE-0607,2026-12-13,Norte,0.5281,0.5854,0.761,False,Revisar primero
+67,CASE-0516,2026-10-03,Sur,0.5103,0.5242,0.76,False,Revisar primero
+68,CASE-0622,2026-12-01,Oeste,0.5373,0.6762,0.756,False,Revisar primero
+69,CASE-0605,2026-12-11,Este,0.533,0.6154,0.752,False,Revisar primero
+70,CASE-0558,2026-11-18,Oeste,0.5462,0.3674,0.736,False,Revisar primero
+71,CASE-0520,2026-10-07,Sur,0.4346,0.4463,0.734,False,Revisar primero
+72,CASE-0524,2026-10-11,Este,0.6181,0.6299,0.66,False,Revisar primero
+73,CASE-0614,2026-12-20,Este,0.494,0.7369,0.659,False,Revisar primero
+74,CASE-0542,2026-11-02,Oeste,0.3787,0.4183,0.656,False,Revisar primero
+75,CASE-0610,2026-12-16,Sur,0.5736,0.3885,0.645,False,Revisar primero
+76,CASE-0556,2026-11-16,Oeste,0.5529,0.304,0.605,False,Revisar primero
+77,CASE-0580,2026-11-13,Oeste,0.6206,0.7564,0.602,False,Revisar primero
+78,CASE-0578,2026-11-11,Sur,0.4508,0.4321,0.585,False,Revisar primero
+79,CASE-0535,2026-10-22,Sur,0.4041,0.4399,0.572,False,Revisar primero
+80,CASE-0495,2026-10-09,Este,0.6648,0.6727,0.556,False,Revisar primero
+81,CASE-0561,2026-11-21,Sur,0.5595,0.729,0.54,False,Revisar primero
+82,CASE-0595,2026-12-01,Norte,0.5566,0.5388,0.536,False,Revisar primero
+83,CASE-0498,2026-10-12,Sur,0.3359,0.3855,0.526,False,Revisar primero
+84,CASE-0503,2026-10-17,Este,0.4775,0.4192,0.508,False,Revisar primero
+85,CASE-0565,2026-11-25,Oeste,0.6306,0.5212,0.508,False,Revisar primero
+86,CASE-0488,2026-10-02,Sur,0.4425,0.3618,0.507,False,Revisar primero
+87,CASE-0485,2026-09-26,Oeste,0.3237,0.496,0.504,False,Revisar primero
+88,CASE-0510,2026-10-24,Sur,0.5388,0.4187,0.489,False,Revisar en orden de cola
+89,CASE-0621,2026-12-27,Sur,0.3388,0.5783,0.484,False,Revisar en orden de cola
+90,CASE-0554,2026-11-14,Este,0.4018,0.4837,0.477,False,Revisar en orden de cola
+91,CASE-0552,2026-11-12,Este,0.3143,0.3875,0.46,False,Revisar en orden de cola
+92,CASE-0549,2026-11-09,Sur,0.3653,0.4217,0.455,False,Revisar en orden de cola
+93,CASE-0528,2026-10-15,Norte,0.188,0.3083,0.446,False,Revisar en orden de cola
+94,CASE-0487,2026-10-01,Norte,0.5018,0.4525,0.439,False,Revisar en orden de cola
+95,CASE-0569,2026-11-02,Sur,0.393,0.9627,0.426,False,Revisar en orden de cola
+96,CASE-0489,2026-10-03,Sur,0.4359,0.6418,0.422,False,Revisar en orden de cola
+97,CASE-0590,2026-11-23,Norte,0.348,0.5477,0.422,False,Revisar en orden de cola
+98,CASE-0592,2026-11-25,Sur,0.504,0.5502,0.413,False,Revisar en orden de cola
+99,CASE-0572,2026-11-05,Oeste,0.5993,0.7997,0.412,False,Revisar en orden de cola
+100,CASE-0560,2026-11-20,Sur,0.501,0.7488,0.412,False,Revisar en orden de cola
+101,CASE-0517,2026-10-04,Este,0.4468,0.7247,0.41,False,Revisar en orden de cola
+102,CASE-0627,2026-12-06,Oeste,0.6572,0.5741,0.41,False,Revisar en orden de cola
+103,CASE-0504,2026-10-18,Norte,0.6287,0.4471,0.408,False,Revisar en orden de cola
+104,CASE-0540,2026-10-27,Este,0.5624,0.3592,0.408,False,Revisar en orden de cola
+105,CASE-0570,2026-11-03,Este,0.5891,0.8343,0.408,False,Revisar en orden de cola
+106,CASE-0612,2026-12-18,Sur,0.5348,0.3794,0.404,False,Revisar en orden de cola
+107,CASE-0458,2026-09-26,Norte,0.673,0.6251,0.401,False,Revisar en orden de cola
+108,CASE-0579,2026-11-12,Este,0.605,0.4127,0.401,False,Revisar en orden de cola
+109,CASE-0499,2026-10-13,Sur,0.6842,0.5327,0.387,False,Revisar en orden de cola
+110,CASE-0545,2026-11-05,Oeste,0.3522,0.6734,0.375,False,Revisar en orden de cola
+111,CASE-0577,2026-11-10,Este,0.3689,0.4312,0.364,False,Revisar en orden de cola
+112,CASE-0515,2026-10-02,Este,0.51,0.3942,0.362,False,Revisar en orden de cola
+113,CASE-0624,2026-12-03,Norte,0.5583,0.626,0.355,False,Revisar en orden de cola
+114,CASE-0522,2026-10-09,Sur,0.2169,0.3896,0.353,False,Revisar en orden de cola
+115,CASE-0618,2026-12-24,Sur,0.5242,0.7868,0.35,False,Revisar en orden de cola
+116,CASE-0491,2026-10-05,Oeste,0.6199,0.6483,0.349,False,Revisar en orden de cola
+117,CASE-0543,2026-11-03,Sur,0.3338,0.4883,0.348,False,Revisar en orden de cola
+118,CASE-0526,2026-10-13,Sur,0.302,0.5327,0.339,False,Revisar en orden de cola
+119,CASE-0555,2026-11-15,Oeste,0.1758,0.3862,0.339,False,Revisar en orden de cola
+120,CASE-0525,2026-10-12,Norte,0.3258,0.3824,0.335,False,Revisar en orden de cola
+121,CASE-0584,2026-11-17,Este,0.4486,0.7113,0.329,False,Revisar en orden de cola
+122,CASE-0506,2026-10-20,Oeste,0.4604,0.4832,0.307,False,Revisar en orden de cola
+123,CASE-0530,2026-10-17,Este,0.4832,0.5876,0.3,False,Revisar en orden de cola
+124,CASE-0576,2026-11-09,Norte,0.3645,0.5051,0.3,False,Revisar en orden de cola
+125,CASE-0620,2026-12-26,Este,0.269,0.5133,0.285,False,Revisar en orden de cola
+126,CASE-0527,2026-10-14,Oeste,0.4221,0.3776,0.262,False,Revisar en orden de cola
+127,CASE-0601,2026-12-07,Norte,0.6403,0.6338,0.262,False,Revisar en orden de cola
+128,CASE-0633,2026-12-12,Sur,0.5119,0.8794,0.246,False,Revisar en orden de cola
+129,CASE-0557,2026-11-17,Este,0.5022,0.5279,0.243,False,Revisar en orden de cola
+130,CASE-0490,2026-10-04,Norte,0.3527,0.375,0.215,False,Revisar en orden de cola
+131,CASE-0629,2026-12-08,Este,0.5853,0.4723,0.211,False,Revisar en orden de cola
+132,CASE-0509,2026-10-23,Este,0.5182,0.61,0.203,False,Revisar en orden de cola
+133,CASE-0514,2026-10-01,Sur,0.6086,0.8857,0.198,False,Revisar en orden de cola
+134,CASE-0494,2026-10-08,Oeste,0.33,0.4556,0.187,False,Revisar en orden de cola
+135,CASE-0613,2026-12-19,Sur,0.2958,0.6771,0.17,False,Revisar en orden de cola
+136,CASE-0492,2026-10-06,Sur,0.3119,0.7204,0.168,False,Revisar en orden de cola
+137,CASE-0512,2026-10-26,Sur,0.3582,0.6341,0.164,False,Revisar en orden de cola
+138,CASE-0640,2026-12-19,Oeste,0.2867,0.8956,0.158,False,Revisar en orden de cola
+139,CASE-0586,2026-11-19,Oeste,0.2606,0.7842,0.15,False,Revisar en orden de cola
+140,CASE-0508,2026-10-22,Oeste,0.44,0.6006,0.149,False,Revisar en orden de cola
+141,CASE-0593,2026-11-26,Oeste,0.3395,0.5148,0.149,False,Revisar en orden de cola
+142,CASE-0521,2026-10-08,Norte,0.3016,0.624,0.145,False,Revisar en orden de cola
+143,CASE-0608,2026-12-14,Este,0.5948,0.8336,0.143,False,Revisar en orden de cola
+144,CASE-0588,2026-11-21,Este,0.2638,0.5073,0.14,False,Revisar en orden de cola
+145,CASE-0519,2026-10-06,Norte,0.4127,0.6067,0.136,False,Revisar en orden de cola
+146,CASE-0550,2026-11-10,Norte,0.4781,0.5156,0.119,False,Revisar en orden de cola
+147,CASE-0493,2026-10-07,Este,0.334,0.5126,0.113,False,Revisar en orden de cola
+148,CASE-0606,2026-12-12,Norte,0.4922,0.5632,0.109,False,Revisar en orden de cola
+149,CASE-0529,2026-10-16,Sur,0.4413,0.8312,0.103,False,Revisar en orden de cola
+150,CASE-0638,2026-12-17,Sur,0.3351,0.5603,0.094,False,Revisar en orden de cola
+151,CASE-0632,2026-12-11,Oeste,0.1772,0.4045,0.071,False,Revisar en orden de cola
+152,CASE-0628,2026-12-07,Norte,0.4327,0.7707,0.058,False,Revisar en orden de cola
+153,CASE-0536,2026-10-23,Este,0.3209,0.5045,0.048,False,Revisar en orden de cola
+154,CASE-0511,2026-10-25,Norte,0.4184,0.6055,0.045,False,Revisar en orden de cola
+155,CASE-0567,2026-11-27,Este,0.1171,0.47,0.041,False,Revisar en orden de cola
+156,CASE-0585,2026-11-18,Oeste,0.344,0.8258,0.037,False,Revisar en orden de cola
+157,CASE-0459,2026-09-27,Este,0.0,0.8658,0.028,False,Revisar en orden de cola
+158,CASE-0634,2026-12-13,Oeste,0.1648,0.6767,0.024,False,Revisar en orden de cola
+159,CASE-0518,2026-10-05,Sur,0.1995,0.5586,0.019,False,Revisar en orden de cola
+160,CASE-0600,2026-12-06,Norte,0.1761,0.4767,0.019,False,Revisar en orden de cola

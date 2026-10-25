@@ -1,0 +1,61 @@
+{
+  "system": "Territorial Review DSS - Synthetic",
+  "purpose": "Prioritize synthetic cases for human review",
+  "prohibited_uses": [
+    "automatic intervention",
+    "eligibility decision",
+    "emergency declaration"
+  ],
+  "gates": {
+    "min_recall": 0.68,
+    "min_group_recall": 0.68,
+    "max_recall_gap": 0.16,
+    "max_fpr_gap": 0.16,
+    "max_latency_ms": 500,
+    "max_model_kb": 1024
+  },
+  "metrics": {
+    "accuracy": 0.71875,
+    "recall": 0.717391304347826,
+    "min_group_recall": 0.6530612244897959
+  },
+  "gaps": {
+    "recall_gap": 0.13763644992880875,
+    "fpr_gap": 0.125
+  },
+  "resources": {
+    "training_seconds": 0.03255390003323555,
+    "model_kb": 3.5634765625,
+    "latency_ms": 0.019839999731630087
+  },
+  "decision": {
+    "status": "REVIEW",
+    "checks": {
+      "recall": true,
+      "group_recall": false,
+      "recall_gap": true,
+      "fpr_gap": true,
+      "latency": true,
+      "model_size": true,
+      "privacy": true
+    },
+    "failed": [
+      "group_recall"
+    ],
+    "human_action": "Do not deploy: operate with the non-predictive baseline, investigate failed gates and document the owner's decision",
+    "trace": {
+      "model_version": "logistic-v0.1.0-74db9fc35677",
+      "sklearn": "1.9.1",
+      "policy": "configs/governance.yml@7f38401ccc05",
+      "train_end": "2026-09-24",
+      "test_start": "2026-09-25",
+      "test_rows": 160,
+      "evidence": [
+        "reports/lab11/DECISION_RECORD.md",
+        "reports/lab12/AUDIT_REPORT.md",
+        "reports/lab13/deployment_decision.json",
+        "docs/MODEL_CARD.md"
+      ]
+    }
+  }
+}
