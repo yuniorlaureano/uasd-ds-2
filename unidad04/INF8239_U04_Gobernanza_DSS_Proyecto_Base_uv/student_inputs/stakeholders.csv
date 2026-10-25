@@ -1,5 +1,5 @@
 stakeholder,benefit,harm,power,participation
-Affected person,REPLACE,REPLACE,low,REPLACE
-Operator,REPLACE,REPLACE,medium,REPLACE
-Institutional owner,REPLACE,REPLACE,high,REPLACE
-Data team,REPLACE,REPLACE,medium,REPLACE
+Affected person,"Su caso de mayor riesgo se revisa antes y con criterios consistentes","Si recibe un puntaje bajo erróneo su caso se retrasa; puede no saber que un modelo influyó",low,"Aviso de uso del sistema, formulario de apelación con respuesta en 5 días y representantes en la revisión trimestral"
+Operator,"Cola ordenada y justificación por caso que reduce tiempo de triaje","Sesgo de automatización y presión por seguir el orden; responsabilidad por errores del modelo",medium,"Capacitación, campo obligatorio de justificación al aceptar o cambiar el orden y canal para reportar errores"
+Institutional owner,"Uso más eficiente de inspecciones y trazabilidad de decisiones","Riesgo legal y reputacional por trato desigual entre grupos o uso fuera de alcance",high,"Aprueba el despliegue, recibe el informe mensual de métricas por grupo y tiene autoridad de retiro"
+Data team,"Retroalimentación etiquetada para mejorar datos y modelo","Responsabilidad por deriva, fugas de datos o métricas engañosas",medium,"Mantiene contratos de datos, ejecuta la auditoría LAB12 y presenta evidencia en el comité de gobernanza"

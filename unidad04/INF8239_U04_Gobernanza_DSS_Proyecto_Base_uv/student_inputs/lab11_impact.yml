@@ -1,9 +1,38 @@
-purpose: REPLACE
-assisted_decision: REPLACE
-users: REPLACE
-affected_population: REPLACE
-owner: REPLACE
-non_predictive_alternative: REPLACE
-out_of_scope_use: REPLACE
-withdrawal_condition: REPLACE
-appeal_mechanism: REPLACE
+purpose: >-
+  Ordenar la cola de casos territoriales sintéticos recibidos para que el equipo técnico
+  revise primero los que combinan alta exposición, baja calidad de infraestructura e
+  incidentes previos. El sistema solo prioriza la revisión humana; no clasifica personas
+  ni decide intervenciones.
+assisted_decision: >-
+  En qué orden un analista técnico abre y revisa los casos pendientes de la semana.
+  La decisión final (inspeccionar, archivar o escalar) la toma y firma el analista.
+users: >-
+  Analistas técnicos de revisión territorial (operadores) y su supervisor de turno,
+  que consultan el puntaje y la justificación por caso en la aplicación interna.
+affected_population: >-
+  Hogares y comunidades representados en los casos sintéticos de las zonas Norte, Sur,
+  Este y Oeste (640 casos), con atención especial a los grupos G1/G2 y a los tramos de
+  edad 60+, cuyos casos pueden quedar retrasados si reciben un puntaje bajo.
+owner: >-
+  Product Owner del DSS (rol responsable A en la matriz RACI), con escalamiento al
+  Propietario Institucional para incidentes y decisiones de retiro.
+non_predictive_alternative: >-
+  Cola por orden de llegada (FIFO) con una regla de triaje explícita y auditable:
+  revisar primero los casos con exposición >= 0.7 o infraestructura <= 0.3, y luego el
+  resto por fecha de recepción. Esta regla es la línea base de comparación en LAB12 y el
+  modo seguro si el modelo se suspende.
+out_of_scope_use: >-
+  Prohibido usar el puntaje para decidir elegibilidad de ayudas o servicios, declarar
+  emergencias, ordenar intervenciones automáticas, perfilar a personas o grupos reales,
+  o inferir características de poblaciones reales de la República Dominicana.
+withdrawal_condition: >-
+  Suspender el modelo y volver a la regla no predictiva si: recall global < 0.68;
+  brecha de recall o de FPR entre grupos > 0.16; se detecta cualquier uso fuera de
+  alcance; aparece un identificador directo en los datos; o el modelo no supera a la
+  línea base FIFO+triaje en recall de casos positivos durante dos revisiones mensuales
+  consecutivas.
+appeal_mechanism: >-
+  Toda persona o comunidad afectada, y cualquier operador, puede solicitar la revisión
+  manual de un caso mediante un formulario con número de caso. Un segundo analista que no
+  vio el puntaje lo revisa en un máximo de 5 días hábiles, se registra el resultado y las
+  apelaciones aceptadas se analizan mensualmente como señal de error del modelo.
